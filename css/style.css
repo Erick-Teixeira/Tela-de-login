@@ -1,0 +1,508 @@
+/* IMPORT FONT OPEN SANS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+/* RESETS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* CONTAINER */
+.container {
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* vh --> medida em relação ao elemento pai,que é html e body */ 
+}
+
+.content {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 960px;
+    height: 80%;
+    /* Não precisa de display flex,pois a classe (first content)já está com display flex */
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* .content::before --> position absolute */
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    background: rgb(146,37,170);
+    background: linear-gradient(90deg, rgba(146,37,170,1) 0%, rgba(68,5,122,1) 100%);
+    width:40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    left: 0;
+}
+
+/* FIRST-CONTENT */
+.first-content {
+    display: flex;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.title-primary {
+    color: #fff;
+}
+
+.title-second {
+    color: #7B25AA;
+}
+
+.social-midia {
+    margin: 1rem 0;
+}
+
+.link-social-midia:not(:first-child) { /* not --> não aplicar | first-child --> primeiro elemento */
+    margin-left: 10px;
+} 
+
+.link-social-midia .item-social-midia {
+    transition: background-color .5s;
+}
+
+.link-social-midia:hover .item-social-midia {
+    background-color: #932cca;
+    color: #fff;
+    border-color: #932cca;
+}
+
+.list-social-midia {
+    display: flex;
+    list-style: none;
+}
+
+.item-social-midia {
+    border:1px solid #bd53f6;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #a281b6e0;
+}
+
+.description {
+
+    font: 15px;
+    font-weight: 300px;
+    color: #fff;
+    line-height: 30px; /*altura entre linhas */
+}
+
+.description-primary {
+    color: #fff;
+}
+
+.description-second {
+    color: #7f8c8d;
+}
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: transparent;
+    font-size: 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #691F91;
+}
+
+.btn-second {
+    background-color: #7B25AA;
+    border: 1px solid #7B25AA;
+    padding: 7px 0px;
+    transition: background-color 0.5s;
+}
+
+.btn-second:hover {
+    background-color: #fff;
+    border: 1px solid #7B25AA;
+    color: #691F91;
+}
+
+.first-column {
+    text-align: center;
+    width: 40%;
+    z-index: 10; /* sobrepõe o conteudo | precisa de position relative e position absolute para funcionar */
+}
+
+.first-content .second-column {
+    z-index: 11;
+}
+
+.second-column {
+    width: 60%; /* 40% first-column + 60% second-column = totalizando 100% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-social-midia {
+    display: flex;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+.form input {
+    width: 100%;
+    height: 45px;
+    border: none;
+    background-color: #ecf0f1;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+    -webkit-text-fill-color: #000 !important;
+}
+
+.label-input {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    background-color: #ecf0f1;
+}
+
+.icon-modify {
+    color: #7f8c8d;
+    padding: 0px 5px;
+}
+
+/* SECOND-CONTENT */
+.second-content {
+    position: absolute;
+    display: flex;
+}
+
+.second-content .first-column {
+    order: 2;
+    z-index: -1;
+}
+
+.second-content .second-column {
+    order: 1;
+    z-index: -1;
+}
+
+.password {
+    color: #34495e;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+.password::first-letter {
+    text-transform: capitalize; /* deixar somente primeira letra maíuscula */
+}
+
+.password:hover {
+    text-decoration: underline;
+}
+
+/* classes que são adiciondas com o JS no body para alterar os Z-index deixando apenas um conteudo visível,ou seja,quando o primeiro conteudo aparece o segundo conteudo fica invisivel, e quando o segundo conteudo aparece o primeiro conteudo fica invisivel. */
+/* quando haver um evento de click em sign in --> o primeiro conteudo aparece e oculta o segundo atravéz do z-index */
+
+.sign-in-js .first-content .first-column { /* <-- primeiro conteudo | coluna 1*/
+    z-index: -1;
+}       
+
+.sign-in-js .second-content .first-column { /* <-- segundo conteudo | coluna 1*/
+    z-index: 13;
+}
+
+.sign-in-js .second-content .second-column { /* <-- segundo conteudo | coluna 2*/
+    z-index: 11;
+}
+
+/* levar ::before para o lado direito */
+.sign-in-js .content::before {
+    left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: sliden 1.3s;
+    z-index: 12;
+}
+
+.sign-up-js .content::before {
+    animation: slideout 1.3s;
+    z-index: 12;
+}
+
+/* quando haver um evento de click em sign up --> o segundo conteudo aparece e oculta o primeiro atravéz do z-index */
+
+.sign-up-js .first-content .first-column {      /* <-- primeiro conteudo | coluna 1*/
+    z-index: 13;
+}
+
+.sign-up-js .second-content .first-column {     /* <-- segundo conteudo | coluna 1*/
+    z-index: -1;
+}  
+
+.sign-up-js .first-content .second-column {     /* <-- primeiro conteudo | coluna 2*/
+    z-index: 11;
+}
+
+/* DESLOCAMENTO DO CONTEÚDO ATRÁS DO CONTENT:BEFORE */
+.sign-in-js .first-content .second-column { /* <-- primeiro conteudo | coluna 2*/
+    z-index: -1;
+    
+    position: relative;
+    animation: deslocamentoEsquerda 1.3s;
+} 
+
+.sign-up-js .second-content .second-column {    /* <-- segundo conteudo | coluna 2*/
+    position: relative;
+    z-index: -1;
+    animation: deslocamentoDireita 1.3s;
+}
+
+/* ANIMAÇÃO CSS PARA CONTEUDO */
+@keyframes deslocamentoEsquerda {
+    from{
+        left: 0;
+        z-index: 12;
+    }
+    25%{
+        left: -80px;
+    }
+    50%{
+        left: -100px;
+    }
+    to{
+        left: -110px;
+        z-index: -1;
+    }
+}
+
+@keyframes deslocamentoDireita {
+    from{
+        left: 0;
+        z-index: 12;
+    }
+    25%{
+        left: 80px;
+    }
+    50%{
+        left: 100px;
+    }
+    to{
+        left: 110px;
+        z-index: -1;
+    }
+}
+
+/* ANIMAÇÕES */
+@keyframes sliden {
+    from{
+        left: 0%;
+        width: 40%;
+    }
+    25%{
+        left: 5%;
+        width: 50%;
+    }
+    50%{
+        left: 25%;
+        width: 60%;
+    }
+    75%{
+        left: 45%;
+        width: 50%;
+    }
+    to{
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes slideout {
+    from{
+        left: 60%;
+        width: 40%;
+    }
+    25%{
+        left: 45%;
+        width: 50%;
+    }
+    50%{
+        left: 25%;
+        width: 60%;
+    }
+    75%{
+        left: 5%;
+        width: 50%;
+    }
+    to{
+        left: 0;
+        width: 40%;
+    }
+}
+
+/* VERSÃO MOBILE */
+@media screen and (max-width:956px) {
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+    .content::before {
+        width: 100%;
+        height: 47%;
+        top: 0;
+        border-radius: 0;
+    }
+    .first-content {
+        height: 100%;
+    }
+    .title-primary{
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+    .title-second {
+        
+    }
+    .first-content, .second-content {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .first-column, .second-column {
+        width: -100%;
+    }
+    .sign-in-js .content::before {
+        top: 60%;
+        left: 0;
+        border-radius: 0;
+    }
+    .form {
+        width: 90%;
+    }
+
+    /* ANIMAÇÃO MOBILE CSS */
+    @keyframes deslocamentoEsquerda {
+        from{
+            top: 0;
+            z-index: 12;
+        }
+        25%{
+            top: -80px;
+        }
+        50%{
+            top: -100px;
+        }
+        to{
+            top: -110px;
+            z-index: -1;
+        }
+    }
+    
+    @keyframes deslocamentoDireita {
+        from{
+            top: 0;
+            z-index: 12;
+        }
+        25%{
+            top: 80px;
+        }
+        50%{
+            top: 100px;
+        }
+        to{
+            top: 110px;
+            z-index: -1;
+        }
+    }
+    
+    @keyframes sliden {
+        from{
+            top: 0%;
+            height: 40%;
+        }
+        25%{
+            top: 5%;
+            height: 50%;
+        }
+        50%{
+            top: 25%;
+            height: 60%;
+        }
+        75%{
+            top: 45%;
+            height: 50%;
+        }
+        to{
+            top: 60%;
+            height: 40%;
+        }
+    }
+    
+    @keyframes slideout {
+        from{
+            top: 60%;
+            height: 40%;
+        }
+        25%{
+            top: 45%;
+            height: 50%;
+        }
+        50%{
+            top: 25%;
+            height: 60%;
+        }
+        75%{
+            top: 5%;
+            height: 50%;
+        }
+        to{
+            top: 0;
+            height: 40%;
+        }
+    }
+}
+
+@media screen and (max-width:740px) {
+    .form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .form {
+        width: 100%;
+    }
+}
