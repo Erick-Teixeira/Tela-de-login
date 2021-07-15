@@ -1,5 +1,5 @@
 # Tela-de-login
-## Tela de Login e Cadastro Interativa feito com HTML,CSS e JavaScript.<br>Projeto feito com o objetivo de aperfeiçoar os conhecimentos em Front-End.
+## Tela de Login e Cadastro Interativa feito com HTML, CSS e JavaScript.<br>Projeto feito com o objetivo de aperfeiçoar os conhecimentos em Front-End.
 ## Inspirado em um video do youtube (canal Guilherme Chinaglia), porém foram feitas algumas mudanças no projeto.
 
 Link: https://erick-teixeira.github.io/Tela-de-login/ 
